@@ -12,9 +12,18 @@ const characters = [
   {name: 'Дарт Вэйдер', side: 'dark'}
 ]
 
+function withFilteredProps (Component) {
+  return function({ list, side }) {
+    const filteredList = list.filter(el => el.side === side)
+    return <Component list={filteredList} />
+  }
+}
+
+const FilteredList = withFilteredProps(App)
+
 ReactDOM.render(
   <React.StrictMode>
-    <App list={characters} side={'light'}/>
+    <FilteredList list={characters} side={'light'} />
   </React.StrictMode>,
   document.getElementById('root')
 );

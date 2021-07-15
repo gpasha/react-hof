@@ -1,9 +1,8 @@
-function App({ list, side }) {
-  const filteredList = list.filter(el => el.side === side)
+function App({ list }) {
   return (
     <ul>
       {
-        filteredList.map((character, i) => (
+        list.map((character, i) => (
           <li key={character.name + i}>
             <strong>{character.name} - </strong>
             {character.side}
