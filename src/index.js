@@ -4,9 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const characters = [
+  {name: 'Люк Скайвокер', side: 'light'},
+  {name: 'Йода', side: 'light'},
+  {name: 'Обиван Кеноби', side: 'light'},
+  {name: 'Палпатин', side: 'dark'},
+  {name: 'Дарт Вэйдер', side: 'dark'}
+]
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App list={characters} side={'light'}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

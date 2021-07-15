@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+function App({ list, side }) {
+  const filteredList = list.filter(el => el.side === side)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ul>
+      {
+        filteredList.map((character, i) => (
+          <li key={character.name + i}>
+            <strong>{character.name} - </strong>
+            {character.side}
+          </li>
+        ))
+      }
+    </ul>
   );
 }
 
